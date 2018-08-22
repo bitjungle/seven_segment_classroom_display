@@ -86,26 +86,12 @@ void loop() {
     }
 
     // Hold the display for x milliseconds before clearing it
-    wait(3000);
+    delay(3000);
 
     // Clear the 7-segment display modules
     for (int k = 0; k < MODULES; k++) {
       modules[k].clearDisplay();
     }
   }
-}
-
-void wait(int ms) { // argument ms is wait time in milliseconds
-  int waitstep = floor(ms/3);
-    // Do some fun with the LEDs
-    modules[0].setLEDs(0x926D);
-    modules[1].setLEDs(0x24DB);
-    delay(waitstep);
-    modules[0].setLEDs(0x24DB);
-    modules[1].setLEDs(0x49B6);
-    delay(waitstep);
-    modules[0].setLEDs(0x49B6);
-    modules[1].setLEDs(0x926D);
-    delay(waitstep);
 }
 
